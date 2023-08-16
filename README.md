@@ -1,24 +1,28 @@
-Tip Time - Solution Code
-=================================
+# Cálculo de Gorjeta - Aplicativo Android
+__________________________________________
 
-Starter code for the [Android Basics with Compose](https://developer.android.com/courses/android-basics-compose/course): Tip Time app.
+## Tópicos de aprendizagem abordados
+
+- JetPack Compose
+- Conceito de Composição
+- Usar, avaliar e gerenciar o estado de componentes ao usar o Compose
+- Elevação de estados e sua relevância
+- Um elemento combinável TextField para inserir e editar texto.
+- Um elemento combinável Text para mostrar texto
+- Um elemento combinável Spacer para mostrar espaços vazios entre os elementos da interface.
+- Propriedades do Modifier → alinhamentos, espaçamentos, fonte e cores
+- Condicionais → If
+
+## Oirentações
+_________________________________________
+
+O aplicativo Tip Time contém vários elementos de interface do usuário para calcular uma gorjeta,
+ensinando sobre entrada do usuário e Estado no Compose.
 
 
-Introduction
-------------
-The Tip Time app contains various UI elements for calculating a tip,
-teaching about user input, and State in Compose.
+## Referências
+__________________________________________
 
+Este projeto contém a inspiração e adaptação do projeto que se enocntra neste repositório - Android Developers
+(https://github.com/google-developer-training/basic-android-kotlin-compose-training-tip-calculator/tree/state)
 
-Pre-requisites
---------------
-* Experience with Kotlin syntax.
-* How to create and run a project in Android Studio.
-
-
-Getting Started
----------------
-1. Install Android Studio, if you don't already have it.
-2. Download the sample.
-3. Import the sample into Android Studio.
-4. Build and run the sample.
