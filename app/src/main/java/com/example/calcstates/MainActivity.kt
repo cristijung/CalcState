@@ -81,11 +81,12 @@ fun TipTimeLayout() {
 fun EditNumberField(modifier: Modifier = Modifier) {
     var amountInput by remember { mutableStateOf("") }
     TextField(
-        value = "",
-        onValueChange = {},
+        value = amountInput,
+        onValueChange = { amountInput = it },
         modifier = modifier
     )
 }
+
 
 
 
