@@ -54,6 +54,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TipTimeLayout() {
     var amountInput by remember { mutableStateOf("") }
+
     val amount = amountInput.toDoubleOrNull() ?: 0.0
     val tip = calculateTip(amount)
 
@@ -69,42 +70,35 @@ fun TipTimeLayout() {
                 .align(alignment = Alignment.Start)
         )
         EditNumberField(
-            modifier = Modifier
-                .padding(bottom = 32.dp)
-                .fillMaxWidth()
+            value = amountInput,
+            onValueChanged = { amountInput = it },
+            modifier = Modifier.padding(bottom = 32.dp).fillMaxWidth()
         )
-       Text(
-            text = stringResource(R.string.tip_amount, "R$ 0.00"),
-            style = MaterialTheme.typography.displaySmall,
-            color = Color.DarkGray
+        Text(
+            text = stringResource(R.string.tip_amount, tip),
+            style = MaterialTheme.typography.displaySmall
         )
         Spacer(modifier = Modifier.height(150.dp))
     }
 }
 
-
 @Composable
 fun EditNumberField(
     value: String,
-    onValueChange: (String) -> Unit,
-    modifier: Modifier = Modifier
+    onValueChanged: (String) -> Unit,
+    modifier: Modifier
 ) {
     TextField(
         value = value,
-        onValueChange = onValueChange,
         singleLine = true,
+        modifier = modifier,
+        onValueChange = onValueChanged,
         label = { Text(stringResource(R.string.bill_amount)) },
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-        modifier = modifier
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
     )
 }
 
-/**
- * Calcula a gorjeta com base na entrada do usuário e formata o valor da gorjeta
- * de acordo com a moeda local.
- * O exemplo --> "R$10,00".
- */
-private fun calculateTip(amount: Double, tipPercent: Double = 15.0): String {
+private fun calculateTip(amount: Double, tipPercent: Double = 10.0): String {
     val tip = tipPercent / 100 * amount
     return NumberFormat.getCurrencyInstance().format(tip)
 }
@@ -112,7 +106,7 @@ private fun calculateTip(amount: Double, tipPercent: Double = 15.0): String {
 @Preview(showBackground = true)
 @Composable
 fun TipTimeLayoutPreview() {
-    TipTimeTheme {;
+    TipTimeTheme {
         TipTimeLayout()
     }
 }

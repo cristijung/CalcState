@@ -4,7 +4,7 @@
     <string name="app_name">TipTime | Hora da Gorjeta</string>
     <string name="calculate_tip">Cálculo de gorjeta - TimeTip</string>
     <string name="bill_amount">Valor da conta</string>
-    <string name="tip_amount">Valor da gorjeta: %s</string>
+    <string name="tip_amount">Valor da gorjeta: R$ </string>
 </resources>
 
 
